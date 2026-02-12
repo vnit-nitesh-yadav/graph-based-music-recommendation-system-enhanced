@@ -1,44 +1,129 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎵 Graph-Based Music Recommendation System (Enhanced)
 
-In this project, we merge the Last.fm and Spotify datasets and use a random-walk on a Hypergraph to create a Graph-based Music Recommendation system, which we then visualize with Java's D3 library. For more information on the Hypergraph and random walk algorithm, please see the report.
+**Enhanced and upgraded version of the original graph-based music recommendation system** with improved UI, optimized recommendation logic, cleaner project structure, and enhanced interactivity.
 
-## Getting Started
+This project builds \
+🎧 interactive visual recommendations using **graph theory**, **Spotify audio features**, and **React/Next.js** visualization.
 
-First, clone the repo.
+---
 
-Then, run the development server:
+## 🚀 Live Demo
 
+> ⚠️ *GitHub Pages deployment is currently disabled due to build limitations.*  
+You can run the app locally (see setup below).
+
+---
+
+## 🧠 Overview
+
+This system takes music data (from Spotify & Last.fm), builds a **graph representation** of similarity, and visualizes relationships between songs. It allows users to explore patterns, audio features, and receive recommendations based on graph connectivity and similarity.
+
+Key features include:
+- 📊 **Interactive graph visualization**
+- 🎶 **Song similarity & recommendations**
+- 📈 **Spotify audio feature analysis**
+- 💡 **Improved UI with React/Next.js**
+- 📁 Organized data pipelines & scripts
+
+---
+
+## 📌 Features
+
+| Feature | Description |
+|---------|-------------|
+| Graph Construction | Builds similarity graphs using audio features |
+| Recommendation | Graph-based nearest neighbor recommendations |
+| Visualization | D3.js powered interactive graph |
+| UI | Clean React/Next.js interface |
+| Dataset Support | Works with cleaned Spotify & Last.fm datasets |
+
+---
+
+## 📁 Directory Structure
+
+📦 .
+├── data/ # Raw & cleaned dataset files
+├── data-collection/ # Data collection & processing scripts
+├── Graph/ # Graph building & random walk scripts
+├── public/ # Static assets
+├── src/ # Frontend app (Next.js + React)
+│ ├── components/
+│ ├── pages/
+│ └── styles/
+├── .github/ # GitHub Actions workflows
+├── README.md
+├── package.json
+└── tsconfig.json
+
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend | Next.js, React |
+| Graph Logic | Python |
+| Visualization | D3.js |
+| Build Tools | Tailwind CSS |
+| Data Sources | Spotify API, Last.fm data |
+
+---
+
+## 🎯 Local Installation
+
+### 1. Clone repository  
 ```bash
-cd spotify-vis
+git clone https://github.com/vnit-nitesh-yadav/graph-based-music-recommendation-system-enhanced.git
+cd graph-based-music-recommendation-system-enhanced
+2. Install UI dependencies
+(Node.js and npm required)
+
+cd src
 npm install
+3. Run the frontend
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Open a browser and visit:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+http://localhost:3000
+📊 Data Files
+The data/ folder contains cleaned CSVs and example train/test zip files for Last.fm datasets.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+⚠️ Some files are large (>50MB). These are included for reference; consider using Git LFS or downloading externally if needed.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+🔍 How It Works (High-Level)
+Data Collection: Scripts in data-collection/ fetch and clean Spotify/Last.fm song metadata and audio features.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Graph Construction: Python scripts in Graph/ construct a weighted similarity graph using audio feature distances or random walks.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Frontend: The UI loads precomputed data & displays an interactive graph.
 
-## Learn More
+Recommendation Logic: Clicking a node shows nearest neighbors and similar songs.
 
-To learn more about Next.js, take a look at the following resources:
+📌 Important Notes
+GitHub Pages deployment is disabled — project runs locally.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Large dataset files exceed GitHub recommended sizes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can replace datasets with your own cleaned CSVs.
 
-## Deploy on Vercel
+🛠️ Contributions
+This project is open for enhancements — feel free to:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add deployment support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Improve recommendation algorithms
+
+Integrate real Spotify API auth flows
+
+If you improve features or fix bugs, open a PR — feedback welcome!
+
+📝 Attribution
+Enhanced based on the original:
+
+➡️ pmanjunath29/graph-based-music-recommendation-system
+
+All enhancements made by @vnit-nitesh-yadav.
+
+📄 License
+Distributed under the MIT License — see LICENSE for details.
